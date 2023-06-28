@@ -1,0 +1,28 @@
+#training L2G model and test
+
+bash train_test_L2G_voc.sh
+#Model weight in runs/${EXP}/model/pascal_voc_epoch_9.pth
+===========================================================================================
+#Evaluate the model performance
+
+python3 evaluate.py --experiment_name ${EXP} # in train_test_L2G_voc.sh
+#Result will show on the screen
+===========================================================================================
+#Generate CAM and pseudo labels from L2G model 
+
+bash test_l2g_voc.sh # EXP NEED same as train_test_L2G_voc.sh
+bash gen_gt_voc.sh # EXP NEED same as train_test_L2G_voc.sh
+#Pseudo labels in /data/voc12/pseudo_seg_labels_${EXP}/
+===========================================================================================
+#Visualization CAM from L2G model 
+
+python3 res.py --experiment_name ${EXP} # in train_test_L2G_voc.sh
+#Result in runs/${EXP}/ms/accu_att_zoom
+===========================================================================================
+#Segmentation model in SERVER2 data/4TB/lian_thesis_project/CLIMS/segmentation/deeplabv2
+#Conda env is deeplab-pytorch!
+
+conda activate deeplab-pytorch
+bash run_voc12_coco_pretrained.sh
+
+#Segmentation Results on VOC2012 testing dataset at http://host.robots.ox.ac.uk:8080/anonymous/ILSJAD.html
