@@ -30,16 +30,13 @@ L2G
 │   │   ├── SegmentationClass
 │   │   ├── SegmentationClassAug
 │   │   ├── Sal
-│   ├── coco14
-│   │   ├── JPEGImages
-│   │   ├── SegmentationClass
-│   │   ├── Sal
+
 
 ```
 Download the [pretrained model](https://drive.google.com/file/d/15F13LEL5aO45JU-j45PYjzv5KW5bn_Pn/view) 
 to initialize the classification network and put it to `./models/`.
 
-Download the [model weight](https://140.118.7.71/share.cgi?ssid=395fb587242548638240de4909c9dd8d&fid=395fb587242548638240de4909c9dd8d)  and put it to `./runs/Official_exp_voc_test_ori_DRSlayer_67_learnable_seblock/`.
+Download the [model weight](https://140.118.7.71/share.cgi?ssid=395fb587242548638240de4909c9dd8d&fid=395fb587242548638240de4909c9dd8d)  and put it to `./runs/Official_exp_voc_test_ori_DRSlayer_67_learnable_seblock/model/`.
 
 
 ## L2G
@@ -49,17 +46,17 @@ cd L2G/
 bash train_test_L2G_voc.sh
 ```
 
-Evaluate the model performance，Result will show on the screen:
+Evaluate the model performance, Result will show on the screen:
 ```
 python3 evaluate.py --experiment_name ${EXP} # in train_test_L2G_voc.sh
 ```
 
-Generate CAM and pseudo labels from L2G model，Pseudo labels in `/data/voc12/pseudo_seg_labels_{EXP}/`：
+Generate CAM and pseudo labels from L2G model, Pseudo labels in `/data/voc12/pseudo_seg_labels_{EXP}/`：
 ```
 bash test_l2g_voc.sh # EXP NEED same as train_test_L2G_voc.sh
 bash gen_gt_voc.sh # EXP NEED same as train_test_L2G_voc.sh
 ```
-Visualization CAM from L2G model ，Result in `runs/${EXP}/ms/accu_att_zoom`：
+Visualization CAM from L2G model, Result in `runs/${EXP}/ms/accu_att_zoom`：
 ```
 python3 res.py --experiment_name ${EXP} # in train_test_L2G_voc.sh
 ```
