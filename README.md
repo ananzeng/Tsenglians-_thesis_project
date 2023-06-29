@@ -15,7 +15,7 @@ L2G uses the off-the-shelf saliency maps generated from PoolNet. Download them a
 - [Saliency maps for PASCAL VOC 2012](https://drive.google.com/file/d/1ZBLZ3YFw6yDIRWo0Apd4znOozg-Buj4A/view?usp=sharing)  
 
 We use CDA to imporve model perforance. Download high confidence foreground
-- [CDA](https://drive.google.com/file/d/1fsql-nXceo4VHidpL3MUGKobz040pANC/view?usp=sharing)
+- [CDA](https://140.118.7.71/share.cgi?ssid=ddfe431de1a04b4e87c385971d0000b7&fid=ddfe431de1a04b4e87c385971d0000b7)
 
 The data folder structure should be like:
 ```
@@ -38,6 +38,9 @@ L2G
 ```
 Download the [pretrained model](https://drive.google.com/file/d/15F13LEL5aO45JU-j45PYjzv5KW5bn_Pn/view) 
 to initialize the classification network and put it to `./models/`.
+
+Download the [model weight](https://140.118.7.71/share.cgi?ssid=395fb587242548638240de4909c9dd8d&fid=395fb587242548638240de4909c9dd8d)  and put it to `./runs/Official_exp_voc_test_ori_DRSlayer_67_learnable_seblock/`.
+
 
 ## L2G
 To train a L2G model on dataset VOC2012, Model weight in `runs/${EXP}/model/pascal_voc_epoch_9.pth`: 

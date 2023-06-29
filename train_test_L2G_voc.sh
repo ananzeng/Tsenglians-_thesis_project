@@ -1,6 +1,6 @@
 #!/bin/sh
 #完整版 還未測試!
-EXP=Official_exp_voc_test_ori_DRSlayer_67_learnable_seblock_CDA+_lr0.0005_tr0.1
+EXP=Official_exp_voc_test_ori_DRSlayer_67_learnable_seblock_CDA+_lr0.0005_tr0.2
 RUN_FILE=train_l2g_sal_voc.py
 BASH_FILE=train_test_L2G_voc.sh
 GPU_ID=0
@@ -38,7 +38,7 @@ CUDA_VISIBLE_DEVICES=2,3 python3 ./scripts/${RUN_FILE} \
     --kd_weights=10 \
     --bg_thr=0.001 \
     --cda \
-    --cda_tr=0.1 \
+    --cda_tr=0.2 \
     --load_checkpoint="./runs/Official_exp_voc_test_ori_DRSlayer_67_learnable_seblock/model/pascal_voc_epoch_9.pth" \
     --current_epoch=10
     
